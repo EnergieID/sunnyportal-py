@@ -28,7 +28,7 @@ with open(path.join(here, 'sunnyportal', '__init__.py'), encoding='utf-8') as f:
             __version__ = l.split('"')[1] # take the part after the first "
 
 setup(
-    name='sunnyportal-py',
+    name='sunnyportal_py',
     version=__version__,
     description='A Python client for SMA sunny portal',
     long_description=long_description,
