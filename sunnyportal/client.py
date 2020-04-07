@@ -63,7 +63,7 @@ class Client(object):
 
 
 class Plant(object):
-    def __init__(self, client, oid, name):
+    def __init__(self, client, oid, name=None):
         self.client = client
         self.oid = oid
         self.name = name
