@@ -20,6 +20,7 @@ from . import requests
 import http.client as http
 import logging
 import ssl
+import certifi
 
 
 class Client(object):
@@ -34,7 +35,7 @@ class Client(object):
         self.token = None
 
     def create_ssl_context(self):
-        context = ssl.create_default_context()
+        context = ssl.create_default_context(cafile=certifi.where())
         context.check_hostname = True
         return context
 
