@@ -32,6 +32,7 @@ setup(
     version=__version__,
     description='A Python client for SMA sunny portal',
     long_description=long_description,
+    long_description_content_type='text/markdown',
     url='https://github.com/EnergieID/sunnyportal-py',
     author='Erik Johansson, EnergieID.be',
     author_email='jan@energieid.be',
