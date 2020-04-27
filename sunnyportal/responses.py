@@ -152,8 +152,10 @@ class PlantProfileResponse(ResponseBase):
             self.plant_image = None
 
         self.production_data = {}
-        for channel in tag.find('production-data').findall('channel'):
-            self.production_data[channel.attrib['meta-name']] = channel.text
+        production_data = tag.find('production-data')
+        if production_data:
+            for channel in production_data.findall('channel'):
+                self.production_data[channel.attrib['meta-name']] = channel.text
 
         self.inverters = []
         inverters = tag.find('inverters')
