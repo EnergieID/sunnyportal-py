@@ -159,18 +159,20 @@ class PlantProfileResponse(ResponseBase):
 
         self.inverters = []
         inverters = tag.find('inverters')
-        for inverter in inverters.findall('inverter'):
-            self.inverters.append({'count': int(inverter.attrib['count']),
-                                   'deviceIcon': inverter.attrib['deviceIcon'],
-                                   'text': inverter.text})
+        if inverters is not None:
+            for inverter in inverters.findall('inverter'):
+                self.inverters.append({'count': int(inverter.attrib['count']),
+                                       'deviceIcon': inverter.attrib['deviceIcon'],
+                                       'text': inverter.text})
 
         self.communication_products = []
         communication_products = tag.find('communicationProducts')
-        for product in communication_products.findall('communicationProduct'):
-            self.communication_products.append(
-                {'count': int(product.attrib['count']),
-                 'deviceIcon': product.attrib['deviceIcon'],
-                 'name': product.text})
+        if communication_products is not None:
+            for product in communication_products.findall('communicationProduct'):
+                self.communication_products.append(
+                    {'count': int(product.attrib['count']),
+                     'deviceIcon': product.attrib['deviceIcon'],
+                     'name': product.text})
 
 
 class DataResponse(ResponseBase):
